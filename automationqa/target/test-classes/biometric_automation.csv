@@ -1,0 +1,2 @@
+EventDate,ExternalID,ClientCode,Gender,WCSScreeningType1,Source,Type,Glucose,Glucosefasting,Systolic,Diastolic,BMI,Total,LDL,HDL,triglycerides,PulseRate,WaistGirth,BodyFat,Waist-To-HipRatio,Height Ft,Height Ch,Weight,TobaccoTestValue,TobaccoTestResult,TobaccoTest,Cotinine
+6/04/2017,expBioTestUser1,expedia,F,1235,source1,type1,fasting,111,122,81,21,151,122,119,2.25,70,21,35,21.5,5,5,182,Y,P,cotinine,Positive

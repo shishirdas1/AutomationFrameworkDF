@@ -1,0 +1,159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.lh</groupId>
+	<artifactId>LiveHealthier</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>LiveHealthier</name>
+	<description>Automation Regression Pack</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<BrowserName></BrowserName>
+		<TestRunID></TestRunID>
+		<XlsData></XlsData>
+		<TEST_ENV></TEST_ENV>
+		<TEST_DB_SERVER></TEST_DB_SERVER>
+		<TEST_DB_NAME></TEST_DB_NAME>
+	</properties>
+
+	<build>
+		<plugins>
+			<!-- Compiler plug-in -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<encoding>iso-8859-1</encoding>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<!-- Below plug-in is used to execute tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>src/test/resources/${testXml}</suiteXmlFile>
+					</suiteXmlFiles>
+					<systemPropertyVariables>
+						<browserName>${BrowserName}</browserName>
+						<testRunID>${TestRunID}</testRunID>
+						<xlsData>${XlsData}</xlsData>
+						<testEnv>${TEST_ENV}</testEnv>
+						<testDbServer>${TEST_DB_SERVER}</testDbServer>
+						<testDbName>${TEST_DB_NAME}</testDbName>
+					</systemPropertyVariables>
+				</configuration>
+				<executions>
+					<execution>
+						<id>surefire-it</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<skip>false</skip>
+							<testFailureIgnore>true</testFailureIgnore>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.testng.xslt</groupId>
+				<artifactId>testng-xslt-plugin</artifactId>
+				<version>1.1</version>
+				<configuration>
+					<showRuntimeTotals>true</showRuntimeTotals>
+					<sortTestCaseLinks>true</sortTestCaseLinks>
+					<testDetailsFilter>FAIL,PASS,SKIP,CONF</testDetailsFilter>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>testng-xslt-plugin</id>
+			<url>http://www.cosminaru.ro/maven/</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<repositories>
+		<repository>
+			<id>neotys-public-releases</id>
+			<url>http://maven.neotys.com/content/repositories/releases/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.53.0</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.13</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.13</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.13.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.wagon</groupId>
+			<artifactId>wagon-ftp</artifactId>
+			<version>2.10</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.5</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
+		</dependency>
+
+	</dependencies>
+</project>
