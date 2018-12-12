@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="automationqa/src/test/java"/>
+	<classpathentry kind="lib" path="automationqa/src/test/resources/sqljdbc4-2.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="automationqa/target/test-classes"/>
+</classpath>
