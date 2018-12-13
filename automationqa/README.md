@@ -5,7 +5,7 @@ This README documents the steps necessary to setup the automation framework and 
 ### What is this repository for? ###
 
 * The repository contains the QA Automation based on __Selenium 2.0 framework__ and can be configured to test the the website on _IE/Chrome/Firefox_
-* __Version__- 2.0
+* __Version__- 1.0
 
 ### How do I get set up the automation framework to run the test on my machine? ###
 
@@ -37,14 +37,3 @@ The framework requires the Java Environment (JDK 7/8) and Maven setup on the loc
  
 ###How to run tests###
   Using the POM.xml (run as Maven Test). 
-
-### Contribution guidelines (TBD) ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-
-* Abhy.Nadar@livehealthier.com
